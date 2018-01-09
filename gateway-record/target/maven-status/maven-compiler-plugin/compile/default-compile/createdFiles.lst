@@ -1,0 +1,4 @@
+com\dafy\base\gateway\record\kafka\RecordDataConsumer.class
+com\dafy\base\gateway\record\domin\Constants.class
+com\dafy\base\gateway\record\RecordBootStrap.class
+com\dafy\base\gateway\record\service\InvokeRecordDataService.class

@@ -1,0 +1,33 @@
+#spring:
+#  profiles:
+#    active: dev
+
+project:
+  name: data
+  #projectOwner:
+spring:
+  data:
+    mongodb:
+      host: mongodb.dafy.com
+      port: 27017
+#      username: dafyadmin
+#      password: dafyadmin
+      database: gateway
+
+dubbo:
+  application:
+    name: gateway-data
+  registry:
+    address: zookeeper://zookeeper1.dafy.com:2181?backup=zookeeper2.dafy.com:2181,zookeeper3.dafy.com:2181
+  protocol:
+    name: dubbo
+    port: 20880
+  annotation:
+    package: com.dafy.base.gateway.data.rpc
+  provider:
+      version: 1.0.0
+      timeout: 3000
+      retries: 2
+      threadpool: cached
+      threads: 256
+      accesslog: /tmp/logs/dubbo_access.log

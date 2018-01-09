@@ -1,0 +1,37 @@
+project:
+  name: api
+  data:
+    maxTps: 128
+    overloadFactor: 0.75
+server:
+  port: 8080
+  tomcat:
+    min-spare-threads: 128
+    max-threads: 256
+
+spring:
+  redis:
+    database: 0
+    host: master.redis.sevend.com
+    port: 6379
+    password:
+    timeout: 0
+    pool:
+      max-active: 16
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+  kafka:
+    producer:
+      bootstrap-servers: kafka1.skye.dafy.com:9092,kafka2.skye.dafy.com:9092,kafka3.skye.dafy.com:9092
+      retries: 2
+      batch-size: 16384
+      buffer-memory: 33554432
+
+dubbo:
+  application:
+    name: gateway-api
+  registry:
+    address: zookeeper://zookeeper1.dafy.com:2181?backup=zookeeper2.dafy.com:2181,zookeeper3.dafy.com:2181
+  annotation:
+    package: com.dafy.base.gateway.service

@@ -1,0 +1,16 @@
+project:
+  projectName: manage
+
+dubbo:
+  application:
+    name: gateway-manage
+  registry:
+    address: zookeeper://zookeeper1.dafy.com:2181?backup=zookeeper2.dafy.com:2181,zookeeper3.dafy.com:2181
+  protocol:
+    name: dubbo
+    port: 20884
+  annotation:
+    package: com.dafy.base.gateway.manage
+server:
+  port: 8070
+#  port: 80
